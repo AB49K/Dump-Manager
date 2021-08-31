@@ -49,7 +49,7 @@ func main() {
 	http.Handle("/reports/", http.StripPrefix("/reports/", http.FileServer(http.Dir("./reports"))))
 	http.HandleFunc("/", main_page)
 	fmt.Println("Listening and Serving")
-    http.ListenAndServe(":8080", nil)
+    http.ListenAndServe(":8999", nil)
     
 }
 
@@ -64,7 +64,7 @@ func main_page(w http.ResponseWriter, r *http.Request){
 
 func generate(w http.ResponseWriter, r *http.Request){
 	fmt.Println("Generating reports")
-	cmd := exec.Command("generate.bat")
+	cmd := exec.Command("./home/andrew.berry/Dump-Manager/generate-spreadsheet.py")
 out, err := cmd.Output()
 
 if err != nil {
@@ -73,7 +73,6 @@ if err != nil {
 }
 
 fmt.Println(string(out))
-	exec.Command("C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python38\\python.exe generate-spreadsheet.py").Run()
 	tmpl := template.Must(template.ParseFiles("generate.html"))
 	
 	if r.Method != http.MethodPost {
