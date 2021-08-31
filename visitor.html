@@ -1,0 +1,35 @@
+<!-- forms.html -->
+{{if .Success}}
+    <h1>Submitted</h1>
+	<a href="/">MAIN PAGE</a>
+	<br>
+	<a href="/new_visitor/">ANOTHER!</a>
+
+{{else}}
+    <h1>Leyburn Dump Tracker</h1>
+    <form method="POST">
+        <label>License Plate:</label><br />
+        <input type="text" name="plate"><br />
+        <br>
+        <label>Vehicle Type</label><br />
+        <input type="checkbox" name="vehicle_type" value="Ute">Ute
+		<input type="checkbox" name="vehicle_type" value="Car">Car
+		<input type="checkbox" name="vehicle_type" value="Trailer">Trailer
+		<input type="checkbox" name="vehicle_type" value="Truck">Truck
+		<br>
+		<br>
+		<label>Waste Type</label><br />
+		
+		<input type="checkbox" name="waste_type" value="General Waste">General Waste
+		<input type="checkbox" name="waste_type" value="Steel Waste">Steel Waste
+		<input type="checkbox" name="waste_type" value="Green Waste">Green Waste
+		<br>
+		<br>
+        <label>Domestic/Commercial</label><br />
+
+        <input type="checkbox" name="commercial" value="Domestic">Domestic Waste
+        <input type="checkbox" name="commercial" value="Commercial">Commercial Waste
+        <br>
+        <input type="submit">
+    </form>
+{{end}}

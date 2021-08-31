@@ -1,0 +1,41 @@
+<!-- forms.html -->
+{{if .Success}}
+    <h1>Submitted</h1>
+	<a href="/">MAIN PAGE</a>
+
+
+{{else}}
+    <h1>Leyburn Dump Tracker - Daily checklist</h1>
+    <form method="POST">
+        <label>Rainfall</label><br />
+        <input type="text" name="rainfall"><br />
+        <br>
+        <label>Skip Bins</label><br />
+        <input type="checkbox" name="waste_bins" value="Empty">Empty
+		<input type="checkbox" name="waste_bins" value="1/4">1/4
+		<input type="checkbox" name="waste_bins" value="1/2">1/2
+		<input type="checkbox" name="waste_bins" value="3/4">3/4
+		<input type="checkbox" name="waste_bins" value="Full">Full
+		<br>
+		<br>
+		<label>Comingled Bins</label><br />
+        <input type="checkbox" name="comingled_bins" value="Empty">Empty
+		<input type="checkbox" name="comingled_bins" value="1/4">1/4
+		<input type="checkbox" name="comingled_bins" value="1/2">1/2
+		<input type="checkbox" name="comingled_bins" value="3/4">3/4
+		<input type="checkbox" name="comingled_bins" value="Full">Full
+		<br>
+		<br>
+        <label>Cardboard Bins</label><br />
+        <input type="checkbox" name="cardboard_bins" value="Empty">Empty
+		<input type="checkbox" name="cardboard_bins" value="1/4">1/4
+		<input type="checkbox" name="cardboard_bins" value="1/2">1/2
+		<input type="checkbox" name="cardboard_bins" value="3/4">3/4
+		<input type="checkbox" name="cardboard_bins" value="Full">Full
+        <br>
+        <br>
+        <label>Comments</label><br />
+        <input type="text" name="comments"><br />
+        <input type="submit">
+    </form>
+{{end}}
