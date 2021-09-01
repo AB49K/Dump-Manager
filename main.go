@@ -132,7 +132,7 @@ func new_visitor(w http.ResponseWriter, r *http.Request) {
 
         // do something with details
 
-        var f, err = os.OpenFile("visitors.csv", os.O_RDWR, 0777)
+        var f, err = os.OpenFile("visitors.csv", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0777)
         if err!=nil{
 			fmt.Println(err)
 			}
