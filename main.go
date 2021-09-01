@@ -64,7 +64,7 @@ func main_page(w http.ResponseWriter, r *http.Request){
 
 func generate(w http.ResponseWriter, r *http.Request){
 	fmt.Println("Generating reports")
-	cmd := exec.Command("./home/andrew.berry/Dump-Manager/generate-spreadsheet.py")
+	cmd := exec.Command("python3", "generate-spreadsheet.py")
 out, err := cmd.Output()
 
 if err != nil {
@@ -131,8 +131,8 @@ func new_visitor(w http.ResponseWriter, r *http.Request) {
         }
 
         // do something with details
-        fmt.Println(details)
-        var f, err = os.OpenFile("visitors.csv", os.O_APPEND|os.O_CREATE, 0755)
+
+        var f, err = os.OpenFile("visitors.csv", os.O_RDWR, 0777)
         if err!=nil{
 			fmt.Println(err)
 			}
@@ -141,6 +141,7 @@ func new_visitor(w http.ResponseWriter, r *http.Request) {
 		var data = [][]string{
         {dt.Format("02-01-2006"), dt.Format("15:04:05"), details.plate, details.vehicle_type, details.waste_type, details.commercial},
     }
+    fmt.Println(data)
     writer.WriteAll(data)
     f.Close()
         

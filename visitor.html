@@ -1,9 +1,11 @@
 <!-- forms.html -->
 {{if .Success}}
     <h1>Submitted</h1>
-	<a href="/">MAIN PAGE</a>
+    <a href="/"><h2>MAIN PAGE<h2/></a>
 	<br>
-	<a href="/new_visitor/">ANOTHER!</a>
+	<br>
+	<br>
+	<a href="/new_visitor/"><h2>ANOTHER!<h2/></a>
 
 {{else}}
     <h1>Leyburn Dump Tracker</h1>
@@ -30,6 +32,9 @@
         <input type="checkbox" name="commercial" value="Domestic">Domestic Waste
         <input type="checkbox" name="commercial" value="Commercial">Commercial Waste
         <br>
+	<br>
+	<br>
+
         <input type="submit">
     </form>
 {{end}}
