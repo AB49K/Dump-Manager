@@ -2,9 +2,11 @@
 from openpyxl import load_workbook
 from datetime import datetime
 import csv
+import sys
 print("Generating spreadsheets")
 now = datetime.now() # current date and time
-d = now.strftime("%d-%m-%Y")
+#d = now.strftime("%d-%m-%Y")
+d=sys.argv[1]
 colums="ABCDEFGHIJLMNOPQRSTUVWXYZ"
 colums=list(colums)
 # Start by opening the spreadsheet and selecting the main sheet
